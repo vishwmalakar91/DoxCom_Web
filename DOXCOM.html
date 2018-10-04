@@ -1,0 +1,150 @@
+﻿<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>DOXCOM</title>
+
+    <script src="Data.js"></script>
+
+    <link rel="stylesheet" href="styles.css">
+    <script src='./packages/jquery-3.1.1.js'></script>
+    <script src='./packages/DataTables/jquery.dataTables.js'></script>
+    <script src="DOXCOM.js"></script>
+</head>
+
+<body>
+    <div>
+        <div id="header">
+            <h1>Welcome to DOXCOM</h1>
+            <h3>The best Communcation Ever!</h3>
+            <h5>Version 2.0</h5>
+        </div>
+        <div style="float:right">
+            <img src='./DOXCOM.JPG' width="100" style="float:right" />
+        </div>
+
+    </div>
+
+
+
+    <div class="box tabular">
+        <p>
+            <label>Customer ID</label>
+            <input id="CustID" type="text" value="" />
+            <input id="OpenButton" type="button" value="Search" onclick="SearchCustomer()" />
+            <input id="CustomersListButton" type="button" value="List" onclick="CustomersList()" />
+            <input id="CreateCustomerButton" type="button" value="New Customer" onclick="CreateCustomer()" />
+        </p>
+    </div>
+
+    <h3 id="Message" style="color:red">Message</h3>
+    <img id='ProcessingImage' src='./Loading.gif' width="100" />
+
+    <div id="CustomersTableDiv">
+        <table id="CustomersTable"></table>
+    </div>
+
+    <div id="ActionDiv" class="box tabular">
+        <h4> Customer Details</h4>
+        <div class="box tabular">
+            <p>
+                <label>Customer ID</label>
+                <input id="CustomerIDTextBox" type="text" value="" readonly="readonly" style="background-color:lightgray" />
+            </p>
+            <p>
+                <label>First Name</label>
+                <input id="FirstNameTextBox" type="text" value="" readonly="readonly" style="background-color:lightgray" />
+            </p>
+            <p>
+                <label>Last Name</label>
+                <input id="LastNameTextBox" type="text" value="" readonly="readonly" style="background-color:lightgray" />
+            </p>
+            <p>
+                <label>Customer Type</label>
+                <input id="CustomerTypeTextBox" type="text" value="" readonly="readonly" style="background-color:lightgray" />
+            </p>
+            <p>
+                <label>Balance</label>
+                <input id="BalanceTextBox" type="text" value="" readonly="readonly" style="background-color:lightgray;font-size:x-large" />
+            </p>
+            <p>
+                <label>Status</label>
+                <input id="StatusTextBox" type="text" value="" readonly="readonly" style="background-color:lightgray" />
+            </p>
+        </div>
+
+        <input id="RechargeButton" type="button" value="Recharge" onclick="ShowRechargeDiv()" />
+        <input id="ChangeCustomerDetailsButton" type="button" value="Change Customer Details" onclick="ChangeCustomerDetails()" />
+
+
+        <div id="RechargeDiv">
+            <h2>Recharge</h2>
+            <div>
+                <p>
+                    <label>Amount $</label>
+                    <input id="Amount" type="text" value="" />
+                </p>
+            </div>
+
+
+
+            <div>
+                <p>
+                    <label>Payment type</label>
+                    <select id="PaymentType" onchange="PaymentTypeChanged()">
+                        <option>Please select...</option>
+                        <option>Voucher</option>
+                        <option>Credit Card</option>
+                        <option>Cash</option>
+                        <option>Check</option>
+                    </select>
+                </p>
+            </div>
+
+
+            <div id="CashdDiv">
+                <p>
+                    <label style="float:right;color:orangered">Do not accept bills of $100</label>
+                </p>
+            </div>
+
+            <div id="VoucherDiv">
+                <p>
+                    <label>Voucher #</label>
+                    <input id="VoucherNum" type="text" value="" />
+                </p>
+            </div>
+
+            <div id="CheckDiv">
+                <p>
+                    <label>Check #</label>
+                    <input id="CheckNum" type="text" value="" />
+                    <label style="float:right;color:orangered">Verify signitaure</label>
+                </p>
+            </div>
+
+            <div id="CCDiv">
+                <p>
+                    <label>CC Name</label>
+                    <input id="CCName" type="text" value="" />
+                </p>
+                <p>
+                    <label>CC #</label>
+                    <input id="CCNum" type="text" value="" />
+                </p>
+                <p>
+                    <label> Expiration#</label>
+                    <input id="CCExpiration" type="text" value="" />
+                </p>
+
+            </div>
+
+
+            <input id="submitButton" type="button" value="Submit" onclick="calculate()" />
+        </div>
+
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+﻿body
+{
+}
+
+#header h1 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+#header {
+    background-color: #628db6;
+    color: #f8f8f8;
+    margin: 0;
+    min-height: 5.3em;
+    padding: 4px 8px 20px 6px;
+    position: relative;
+}
+
+.box {
+    background-color: #f6f6f6;
+    border: 1px solid #e4e4e4;
+    border-radius: 3px;
+    color: #505050;
+    line-height: 1.5em;
+    margin-bottom: 10px;
+    overflow-wrap: break-word;
+    padding: 6px;
+}
+.tabular label {
+    float: left;
+    font-weight: bold;
+    margin-left: -180px;
+    text-align: right;
+    width: 175px;
+}
+
+ .tabular p {
+    clear: left;
+    margin: 0;
+    min-height: 2em;
+    padding: 3px 0 3px 180px;
+}
+
+input, select {
+    /*float: left;
+    margin-left: 80px;*/
+     max-width: 95%;
+    margin-bottom: 1px;
+    margin-top: 1px;
+    vertical-align: middle;
+}

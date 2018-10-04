@@ -1,0 +1,34 @@
+{
+  "provider": {
+    "name": "Something API"
+  },
+  "consumer": {
+    "name": "Consumer"
+  },
+  "interactions": [
+    {
+      "description": "Customers DB is up and running",
+      "provider_state": "Customer with ID 1 exist",
+      "request": {
+        "method": "GET",
+        "path": "/Customer/1",
+        "headers": {
+          "Accept": "application/json"
+        }
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json; charset=utf-8"
+        },
+        "body": {
+        					"id":"1",
+        					"name":"Jack"
+        				}
+      }
+    }
+  ],
+  "metadata": {
+    "pactSpecificationVersion": "1.1.0"
+  }
+}
